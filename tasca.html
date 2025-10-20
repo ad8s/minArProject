@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+
+
+<body>
+  <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: true"
+    device-orientation-permission-ui="enabled: true">
+
+    <a-assets>
+      <img id="institutCastellet" src="models/historia_institut.jpg"/>
+      <a-asset-item id="jupiter" src="models/jupiter.glb"></a-asset-item>
+      <a-asset-item id="venus" src="models/venus.glb"></a-asset-item>
+      <a-asset-item id="diana" src="models/diana.glb"></a-asset-item>
+      <a-asset-item id="neptu" src="models/neptu.glb"></a-asset-item>
+      <a-asset-item id="mart" src="models/hades.glb"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-gltf-model src="#jupiter" scale="0.8 0.8 0.8" position="0 0 1" animation-mixer></a-gltf-model>
+
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 1">
+      <a-gltf-model src="#mart" scale="0.8 0.8 0.8" position="2 0 -2" rotation="90 180 90"></a-gltf-model>
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 2">
+      <a-gltf-model src="#neptu" scale="0.1 0.1 0.1" position="0 0 0" rotation="180 360 180"></a-gltf-model>
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 3">
+      <a-gltf-model src="#venus" scale="0.8 0.8 0.8" position="0 0 0" animation-mixer></a-gltf-model>
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 4">
+      <a-gltf-model src="#diana" scale="0.8 0.8 0.8" position="0 0 0" rotation="0 0 0"></a-gltf-model>
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 5">
+      <a-plane src="#institutCastellet" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
+
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
